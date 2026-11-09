@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#653e00", "surface": "#061423", "on-background": "#d6e4f9", "on-secondary-fixed": "#001a42", "on-error-container": "#ffdad6", "on-primary": "#003640", "tertiary-container": "#e79400", "primary-container": "#06b6d4", "outline": "#869397", "surface-container-low": "#0f1c2c", "secondary-fixed-dim": "#adc6ff", "on-tertiary": "#472a00", "surface-variant": "#283646", "on-error": "#690005", "surface-container": "#132030", "surface-bright": "#2d3a4a", "primary-fixed": "#acedff", "error-container": "#93000a", "on-secondary-fixed-variant": "#004395", "secondary-fixed": "#d8e2ff", "on-secondary": "#002e6a", "inverse-primary": "#00687a", "surface-tint": "#4cd7f6", "secondary": "#adc6ff", "tertiary": "#ffb95f", "surface-container-high": "#1e2b3b", "on-surface": "#d6e4f9", "tertiary-fixed": "#ffddb8", "surface-container-highest": "#283646", "inverse-surface": "#d6e4f9", "tertiary-fixed-dim": "#ffb95f", "on-primary-fixed-variant": "#004e5c", "outline-variant": "#3d494c", "on-surface-variant": "#bcc9cd", "on-tertiary-container": "#563400", "surface-container-lowest": "#020f1e", "error": "#ffb4ab", "surface-dim": "#061423", "background": "#061423", "primary-fixed-dim": "#4cd7f6", "on-tertiary-fixed": "#2a1700", "secondary-container": "#0566d9", "primary": "#4cd7f6", "on-primary-container": "#00424f", "inverse-on-surface": "#243141", "on-secondary-container": "#e6ecff", "on-primary-fixed": "#001f26" }, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { margin: "1.5rem", "gutter-mobile": "0.75rem", "space-lg": "1.25rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-xl": "2rem", gutter: "1rem", "margin-mobile": "1rem", "space-sm": "0.5rem" }, fontFamily: { "body-md": ["Inter"], "headline-md": ["Space Grotesk"], "code-md": ["JetBrains Mono"], "headline-lg": ["Space Grotesk"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-pin": ["JetBrains Mono"], "code-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Space Grotesk"], "headline-xl": ["Space Grotesk"], "label-sm": ["Inter"], "headline-xl-mobile": ["Space Grotesk"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "500" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "label-pin": ["11px", { lineHeight: "14px", letterSpacing: "0.06em", fontWeight: "700" }], "code-lg": ["16px", { lineHeight: "22px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "28px", fontWeight: "600" }], "headline-xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }], "headline-xl-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm min-w-0"><img alt="ProtoPin Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBUn5MrTDD_6iIUKy62fzuWPvRkHUCRGj3OaYwR5TkcJg_mSEK5QsKJS2fiTxrPeim4yHEcRMuWgt3ViNhEi6AAQpfZdvan983v__solT3Y3EOcrkAt7mZWUcJ7JOzNEAXySnQ-a4Kmp7RjLv_41qUso5tuEAzMhSJj-FG-rlXQ9ZzMECxOBqxvREJ5mLNqfdQTrp72pESM1MQjaXE72_fbVbyocZ79vvyt-rWpwfA"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-code-md text-code-md text-primary font-bold tracking-tight">ProtoPin</span><span class="px-space-xs py-0.5 rounded bg-surface-container-high font-label-pin text-label-pin text-primary font-bold">LAB</span></div><span class="font-headline-md text-headline-md truncate text-on-surface">Seguridad</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Búsqueda rápida de componentes" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-high/60 text-on-surface hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full px-gutter-mobile py-space-sm gap-space-md">
+<!-- Banner Superior de Advertencia -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md shadow-md">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-tertiary-container/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-10 h-10 rounded-xl bg-tertiary/20 flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[24px]">timer</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-tertiary/20 font-label-pin text-label-pin text-tertiary font-bold tracking-wider uppercase">Protip Vital</span>
+<span class="font-code-md text-code-md text-tertiary font-bold">PRE-ON</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface leading-snug pt-0.5">
+          Checklist Pre-Energizado
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          60 segundos antes de accionar el switch de la fuente evitan 2 horas de frustración y chips quemados.
+        </p>
+</div>
+</div>
+</div>
+<!-- Barra de Progreso y Estado de Preparación -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Estado del Banco</span>
+</div>
+<span class="font-code-md text-code-md font-bold text-primary" id="checklist-counter">2 / 6 LISTOS</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-primary transition-all duration-300 ease-out" id="checklist-progress-bar" style="width: 33.33%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-pin text-label-pin pt-0.5">
+<span>SEGURIDAD EN BANCO</span>
+<span class="text-tertiary" id="countdown-label">MODO INSPECCIÓN ACTIVO</span>
+</div>
+</div>
+<!-- Checklist Interactivo -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Puntos Críticos de Verificación</span>
+<button class="font-code-md text-code-md text-primary hover:text-primary-fixed transition-colors" id="reset-checklist" type="button">Reiniciar</button>
+</div>
+<!-- Item 1 (Inicialmente Marcado) -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-sm select-none">
+<input checked="" class="check-toggle peer sr-only" data-index="1" type="checkbox"/>
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest peer-checked:bg-primary text-surface peer-checked:text-on-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-body-md text-body-md font-semibold text-on-surface peer-checked:text-on-surface">Fuente de poder APAGADA durante cableado</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest font-label-pin text-label-pin text-primary">0V VBUS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+          Nunca insertes componentes ni muevas jumpers con la fuente entregando voltaje.
+        </p>
+</div>
+</label>
+<!-- Item 2 (Inicialmente Marcado) -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-sm select-none">
+<input checked="" class="check-toggle peer sr-only" data-index="2" type="checkbox"/>
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest peer-checked:bg-primary text-surface peer-checked:text-on-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-body-md text-body-md font-semibold text-on-surface peer-checked:text-on-surface">Polaridad de alimentación verificada</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest font-label-pin text-label-pin text-secondary">RAIL CHECK</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+          VCC al riel positivo (rojo) y GND al negativo (azul). Sin cruces directos (evitar corto circuito).
+        </p>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-sm select-none">
+<input class="check-toggle peer sr-only" data-index="3" type="checkbox"/>
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest peer-checked:bg-primary text-surface peer-checked:text-on-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-body-md text-body-md font-semibold text-on-surface peer-checked:text-on-surface">Capacitores electrolíticos orientados</span>
+<span class="px-space-xs py-0.5 rounded bg-error-container/40 font-label-pin text-label-pin text-error">¡EXPLOSIÓN!</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+          La franja con signos '-' debe ir hacia la línea de menor potencial / GND. (¡Explotan si se invierten!).
+        </p>
+</div>
+</label>
+<!-- Item 4 -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-sm select-none">
+<input class="check-toggle peer sr-only" data-index="4" type="checkbox"/>
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest peer-checked:bg-primary text-surface peer-checked:text-on-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-body-md text-body-md font-semibold text-on-surface peer-checked:text-on-surface">Resistor en LEDs y bases de transistor</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest font-label-pin text-label-pin text-tertiary">330Ω - 1kΩ</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+          Ningún LED conectado directamente a 5V/12V sin resistencia limitadora en serie.
+        </p>
+</div>
+</label>
+<!-- Item 5 -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-sm select-none">
+<input class="check-toggle peer sr-only" data-index="5" type="checkbox"/>
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest peer-checked:bg-primary text-surface peer-checked:text-on-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-body-md text-body-md font-semibold text-on-surface peer-checked:text-on-surface">Pin 1 del Circuito Integrado ubicado</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest font-label-pin text-label-pin text-primary">DIP NOTCH</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+          La muesca o punto del chip debe coincidir con la orientación del diagrama esquemático.
+        </p>
+</div>
+</label>
+<!-- Item 6 -->
+<label class="group relative flex items-start gap-space-md p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-sm select-none">
+<input class="check-toggle peer sr-only" data-index="6" type="checkbox"/>
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest peer-checked:bg-primary text-surface peer-checked:text-on-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-body-md text-body-md font-semibold text-on-surface peer-checked:text-on-surface">Límite de corriente configurado</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest font-label-pin text-label-pin text-tertiary">CC LIMIT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+          Fijar límite de corriente (CC) en la fuente a 100mA-200mA para pruebas iniciales.
+        </p>
+</div>
+</label>
+</div>
+<!-- Sección: ¿Qué Quema Qué? - Reglas de Oro -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs px-space-xs">
+<span class="material-symbols-outlined text-error text-[20px]">local_fire_department</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">¿Qué Quema Qué? — Reglas de Oro</h2>
+</div>
+<!-- Tarjeta 1: Alerta Roja -->
+<div class="rounded-xl bg-surface-container-high p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></div>
+<span class="font-code-md text-code-md text-error font-bold uppercase tracking-wider">PELIGRO CRÍTICO</span>
+</div>
+<span class="font-label-pin text-label-pin text-on-surface-variant uppercase bg-surface-container-highest px-space-xs py-0.5 rounded">Riesgo Directo</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Cortocircuito Vcc a GND</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          La fuente entra en modo protección o se queman y derriten las pistas internas del protoboard en milisegundos.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs text-error font-code-md text-code-md bg-error-container/20 p-space-xs rounded">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>I &gt; 3.0A instantáneo — Daño térmico permanente</span>
+</div>
+</div>
+<!-- Tarjeta 2: Alerta Naranja -->
+<div class="rounded-xl bg-surface-container-high p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div>
+<span class="font-code-md text-code-md text-tertiary font-bold uppercase tracking-wider">PRECAUCIÓN SEVERA</span>
+</div>
+<span class="font-label-pin text-label-pin text-on-surface-variant uppercase bg-surface-container-highest px-space-xs py-0.5 rounded">Silicio Dañado</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Inversión de pines en Op-Amp / Timer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          El chip se calienta en 3 segundos y queda totalmente inutilizable por ruptura de unión PN interna.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs text-tertiary font-code-md text-code-md bg-tertiary/10 p-space-xs rounded">
+<span class="material-symbols-outlined text-[16px]">device_thermostat</span>
+<span>LM358 / NE555 superan 90°C al instante</span>
+</div>
+</div>
+<!-- Tarjeta 3: Alerta Amarilla -->
+<div class="rounded-xl bg-surface-container-high p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+<span class="font-code-md text-code-md text-secondary font-bold uppercase tracking-wider">SOBRETENSIÓN LÓGICA</span>
+</div>
+<span class="font-label-pin text-label-pin text-on-surface-variant uppercase bg-surface-container-highest px-space-xs py-0.5 rounded">Rango TTL</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Tensión excesiva en compuertas (74LS)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Tensión nominal estricta: Máximo 5.25V. Conectar a rieles de 12V destruye la matriz interna de inmediato.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs text-secondary font-code-md text-code-md bg-secondary-container/20 p-space-xs rounded">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>VCC máx = 5.0V ± 5% (74LS00, 74LS08, 74LS86)</span>
+</div>
+</div>
+</div>
+<!-- Fotografía de Contexto de Laboratorio -->
+<div class="rounded-xl bg-surface-container overflow-hidden shadow-sm flex flex-col">
+<div class="relative w-full h-36">
+<img class="w-full h-full object-cover" data-alt="High angle macro shot of an electronics workbench in a university mechatronics laboratory. In sharp focus are illuminated multimeter probes, an oscilloscope displaying a clean square wave in cyan glow, and an electronic breadboard with neatly arranged DIP integrated circuits and resistors under soft moody task lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5_BeTGMw2CRuB4FntzhF5z_5hXTHKJZF54iPPe78tZwWbbTXZggFRjiZnOHGTZIUA6RMW2StnupJHNoElw1AMG9iO1nOQVYrfTH_PHNAiPD9PO44_e66n6rHAxx9E5BOA6mpQeN5D76L2nBenLQX633RItBI7MAQEqvsjCr7IxMaCCkaEFulCTMWBCsyt_B-uIH9DHI4py6I409v6T2yLw-oCJtTbn-ladeda6GI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/40 to-transparent"></div>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-surface font-label-pin text-label-pin">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span> BANCO ACTIVO #04</span>
+<span class="text-on-surface-variant">OSCILOSCOPIO LISTO</span>
+</div>
+</div>
+<div class="p-space-sm flex items-center justify-between text-on-surface-variant">
+<span class="font-body-sm text-body-sm">Norma de Taller IEEE &amp; OSHA Lab</span>
+<span class="font-code-md text-code-md text-primary">PWR_OFF_BY_DEFAULT</span>
+</div>
+</div>
+<!-- Botón Final de Confirmación -->
+<div class="pt-space-xs pb-space-sm">
+<button class="w-full h-14 rounded-xl bg-primary-container text-on-primary font-code-lg text-code-lg font-bold flex items-center justify-center gap-space-sm shadow-lg shadow-primary-container/20 active:scale-[0.98] transition-all" id="btn-energize" type="button">
+<span class="material-symbols-outlined text-[24px]">power_settings_new</span>
+<span id="btn-text">Todo verificado • Listo para energizar</span>
+</button>
+<p class="text-center font-label-pin text-label-pin text-on-surface-variant mt-2 tracking-wide uppercase" id="safety-warning">
+      Completa los 6 puntos para habilitar el switch virtual
+    </p>
+</div>
+</div>
+<script>
+  (function () {
+    const checkboxes = document.querySelectorAll('.check-toggle');
+    const counter = document.getElementById('checklist-counter');
+    const progressBar = document.getElementById('checklist-progress-bar');
+    const btnEnergize = document.getElementById('btn-energize');
+    const btnText = document.getElementById('btn-text');
+    const safetyWarning = document.getElementById('safety-warning');
+    const resetBtn = document.getElementById('reset-checklist');
+    const countdownLabel = document.getElementById('countdown-label');
+
+    function updateState() {
+      const total = checkboxes.length;
+      const checkedCount = Array.from(checkboxes).filter(c => c.checked).length;
+      const percent = (checkedCount / total) * 100;
+
+      counter.textContent = `${checkedCount} / ${total} LISTOS`;
+      progressBar.style.width = `${percent}%`;
+
+      if (checkedCount === total) {
+        btnEnergize.classList.remove('opacity-60', 'cursor-not-allowed');
+        btnEnergize.classList.add('bg-primary', 'text-on-primary', 'shadow-primary/40');
+        btnText.textContent = '¡TODO VERIFICADO! • ENERGIZAR FUENTE';
+        safetyWarning.textContent = 'LISTO PARA SUBIR INTERRUPTOR PRINCIPAL';
+        safetyWarning.classList.add('text-primary');
+        safetyWarning.classList.remove('text-on-surface-variant');
+        countdownLabel.textContent = 'PROTOCOLO COMPLETO';
+        countdownLabel.classList.remove('text-tertiary');
+        countdownLabel.classList.add('text-primary');
+      } else {
+        btnEnergize.classList.remove('bg-primary');
+        btnEnergize.classList.add('bg-primary-container');
+        btnText.textContent = 'Todo verificado • Listo para energizar';
+        safetyWarning.textContent = `Faltan ${total - checkedCount} verificaciones de seguridad`;
+        safetyWarning.classList.remove('text-primary');
+        safetyWarning.classList.add('text-on-surface-variant');
+        countdownLabel.textContent = 'MODO INSPECCIÓN ACTIVO';
+        countdownLabel.classList.add('text-tertiary');
+        countdownLabel.classList.remove('text-primary');
+      }
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateState);
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        checkboxes.forEach(cb => cb.checked = false);
+        updateState();
+      });
+    }
+
+    if (btnEnergize) {
+      btnEnergize.addEventListener('click', () => {
+        const total = checkboxes.length;
+        const checkedCount = Array.from(checkboxes).filter(c => c.checked).length;
+        if (checkedCount === total) {
+          btnEnergize.classList.add('scale-95');
+          setTimeout(() => {
+            btnEnergize.classList.remove('scale-95');
+            alert('⚡ Señal enviada: Circuito seguro. Procediendo a energizar con 150mA de corriente.');
+          }, 150);
+        } else {
+          // Highlight unchecked items feedback
+          checkboxes.forEach(cb => {
+            if (!cb.checked) {
+              const card = cb.closest('label');
+              card.classList.add('bg-error-container/20');
+              setTimeout(() => card.classList.remove('bg-error-container/20'), 500);
+            }
+          });
+        }
+      });
+    }
+
+    updateState();
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.45)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="pinouts" href="#"><span class="material-symbols-outlined text-[22px]">memory</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Pinouts</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="circuitos" href="#"><span class="material-symbols-outlined text-[22px]">schema</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Circuitos</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="calculadora" href="#"><span class="material-symbols-outlined text-[22px]">calculate</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Cálculos</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] px-2 py-1 transition-colors text-primary font-bold" data-path="seguridad" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Seguridad</span></a></div></nav></body></html>

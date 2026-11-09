@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-[#f8fafc] text-slate-800 font-['Inter',sans-serif] min-h-screen flex flex-col antialiased selection:bg-emerald-200 selection:text-emerald-900"><header class="fixed top-0 w-full z-50 pt-safe bg-white/85 backdrop-blur-xl border-b border-emerald-100/60 shadow-sm"><div class="h-16 px-4 flex items-center justify-between gap-2"><div class="flex items-center gap-2.5 min-w-0"><img alt="ProtoPin Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBUn5MrTDD_6iIUKy62fzuWPvRkHUCRGj3OaYwR5TkcJg_mSEK5QsKJS2fiTxrPeim4yHEcRMuWgt3ViNhEi6AAQpfZdvan983v__solT3Y3EOcrkAt7mZWUcJ7JOzNEAXySnQ-a4Kmp7RjLv_41qUso5tuEAzMhSJj-FG-rlXQ9ZzMECxOBqxvREJ5mLNqfdQTrp72pESM1MQjaXE72_fbVbyocZ79vvyt-rWpwfA"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-['JetBrains_Mono',monospace] text-xs text-emerald-700 font-bold tracking-tight">ProtoPin</span><span class="px-1.5 py-0.5 rounded-full bg-emerald-100 text-[10px] font-['JetBrains_Mono',monospace] text-emerald-800 font-bold">LAB</span></div><span class="font-['Space_Grotesk',sans-serif] text-base font-bold truncate text-slate-900">Calculadora</span></div></div><div class="flex items-center gap-2 shrink-0"><button aria-label="Búsqueda rápida de componentes" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="w-9 h-9 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 flex items-center justify-center font-semibold text-sm shadow-sm"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-gradient-to-b from-[#f0fdf4]/50 via-[#f8fafc] to-[#f8fafc] min-h-screen"><div class="flex flex-col w-full px-4 py-3 gap-3.5">
+<!-- Segmented Tabs -->
+<div class="flex p-1 bg-slate-100/90 rounded-2xl gap-1 border border-slate-200/60 shadow-inner">
+<button class="flex-1 py-2 text-center rounded-xl bg-white text-emerald-800 font-['Space_Grotesk',sans-serif] text-xs font-bold shadow-sm border border-emerald-100 flex items-center justify-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">lightbulb</span>
+<span>Resistor LED</span>
+</button>
+<button class="flex-1 py-2 text-center rounded-xl bg-transparent text-slate-600 hover:text-slate-900 text-xs font-medium transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-slate-400">tune</span>
+<span>Divisor V</span>
+</button>
+<button class="flex-1 py-2 text-center rounded-xl bg-transparent text-slate-600 hover:text-slate-900 text-xs font-medium transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-slate-400">moving</span>
+<span>Op-Amp</span>
+</button>
+</div>
+<!-- Bench Lab Status Micro-Banner -->
+<div class="flex items-center justify-between px-3.5 py-2 rounded-xl bg-emerald-50/80 border border-emerald-200/60 text-slate-700 text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-slate-700 font-semibold">CALC-ENGINE // E24 ACTIVE</span>
+</div>
+<span class="font-['JetBrains_Mono',monospace] text-[10px] bg-emerald-200/70 border border-emerald-300/50 px-2 py-0.5 rounded-full text-emerald-900 font-bold tracking-wide">REAL-TIME</span>
+</div>
+<!-- Interactive Calculator Engine Card -->
+<div class="flex flex-col bg-white rounded-2xl p-4 gap-4 shadow-sm border border-slate-200/80">
+<!-- Header with Formula -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+</div>
+<h2 class="font-['Space_Grotesk',sans-serif] text-base font-bold text-slate-900">Cálculo de Resistencia LED</h2>
+</div>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-indigo-700 bg-indigo-50 border border-indigo-100 px-2.5 py-1 rounded-lg font-semibold">R = (Vs - Vf) / I</span>
+</div>
+<!-- Parameter 1: Vs (Voltaje de Fuente) -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">1. Voltaje Fuente (Vs)</label>
+<span class="font-['JetBrains_Mono',monospace] text-base font-bold text-emerald-700" id="vs-display">5.0 V</span>
+</div>
+<!-- Quick Presets -->
+<div class="grid grid-cols-4 gap-1.5">
+<button class="preset-vs py-2 rounded-xl bg-slate-50 text-slate-700 border border-slate-200/80 hover:bg-slate-100 font-['JetBrains_Mono',monospace] text-xs font-medium transition-all" onclick="setVs(3.3, this)" type="button">3.3V</button>
+<button class="preset-vs py-2 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-900 font-['JetBrains_Mono',monospace] text-xs shadow-xs transition-all font-bold" onclick="setVs(5.0, this)" type="button">5.0V</button>
+<button class="preset-vs py-2 rounded-xl bg-slate-50 text-slate-700 border border-slate-200/80 hover:bg-slate-100 font-['JetBrains_Mono',monospace] text-xs font-medium transition-all" onclick="setVs(9.0, this)" type="button">9.0V</button>
+<button class="preset-vs py-2 rounded-xl bg-slate-50 text-slate-700 border border-slate-200/80 hover:bg-slate-100 font-['JetBrains_Mono',monospace] text-xs font-medium transition-all" onclick="setVs(12.0, this)" type="button">12.0V</button>
+</div>
+<!-- Fine Numeric Slider/Stepper -->
+<div class="flex items-center gap-2 mt-1">
+<input class="w-full accent-emerald-600 bg-slate-200 h-2 rounded-lg appearance-none cursor-pointer" id="vs-slider" max="24.0" min="1.0" oninput="onVsSlider(this.value)" step="0.1" type="range" value="5.0"/>
+</div>
+</div>
+<!-- Parameter 2: LED Color & Forward Voltage (Vf) -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">2. Tipo de Diodo / Caída (Vf)</label>
+<span class="font-['JetBrains_Mono',monospace] text-base font-bold text-amber-700" id="vf-display">2.0 V</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<!-- Rojo -->
+<button class="led-card flex items-center justify-between p-2.5 rounded-xl bg-rose-50/70 border border-rose-200 text-slate-800 transition-all font-medium" onclick="setLed(2.0, 'Rojo', '#ef4444', this)" type="button">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-rose-500 ring-2 ring-rose-200"></span>
+<span class="text-sm font-semibold text-slate-800">Rojo</span>
+</div>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-rose-700 font-bold">2.0V</span>
+</button>
+<!-- Verde -->
+<button class="led-card flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all" onclick="setLed(2.2, 'Verde', '#22c55e', this)" type="button">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-emerald-500 opacity-80"></span>
+<span class="text-sm font-medium text-slate-800">Verde</span>
+</div>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-slate-500">2.2V</span>
+</button>
+<!-- Azul / Blanco -->
+<button class="led-card flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all" onclick="setLed(3.2, 'Azul/Blanco', '#38bdf8', this)" type="button">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-sky-500 opacity-80"></span>
+<span class="text-sm font-medium text-slate-800">Azul / Blanco</span>
+</div>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-slate-500">3.2V</span>
+</button>
+<!-- Amarillo -->
+<button class="led-card flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all" onclick="setLed(2.1, 'Amarillo', '#eab308', this)" type="button">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-amber-400 opacity-80"></span>
+<span class="text-sm font-medium text-slate-800">Amarillo</span>
+</div>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-slate-500">2.1V</span>
+</button>
+</div>
+</div>
+<!-- Parameter 3: Iled (Corriente) -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-500">3. Corriente Objetivo (Iled)</label>
+<span class="font-['JetBrains_Mono',monospace] text-base font-bold text-indigo-700" id="current-display">15 mA</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="preset-cur py-2 px-1 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 text-center transition-all" onclick="setCurrent(10, this)" type="button">
+<span class="block font-['JetBrains_Mono',monospace] text-xs font-semibold text-slate-800">10 mA</span>
+<span class="text-[11px] text-slate-500 font-medium">Suave</span>
+</button>
+<button class="preset-cur py-2 px-1 rounded-xl bg-indigo-100 border border-indigo-300 text-indigo-900 text-center transition-all font-bold shadow-xs" onclick="setCurrent(15, this)" type="button">
+<span class="block font-['JetBrains_Mono',monospace] text-xs font-bold text-indigo-900">15 mA</span>
+<span class="text-[11px] text-indigo-700 font-medium">Óptimo</span>
+</button>
+<button class="preset-cur py-2 px-1 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 text-center transition-all" onclick="setCurrent(20, this)" type="button">
+<span class="block font-['JetBrains_Mono',monospace] text-xs font-semibold text-slate-800">20 mA</span>
+<span class="text-[11px] text-slate-500 font-medium">Máx Seguro</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Highlighted Result Card (Pastel Sky / Mint Card) -->
+<div class="relative flex flex-col bg-gradient-to-br from-white via-sky-50/40 to-emerald-50/50 rounded-2xl p-4 gap-2.5 shadow-sm border border-sky-100 overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="text-[11px] uppercase tracking-wider text-sky-800 font-['JetBrains_Mono',monospace] font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-sky-600">bolt</span>
+        VALOR COMERCIAL RECOMENDADO (E24)
+      </span>
+<span class="text-[11px] font-['JetBrains_Mono',monospace] font-bold px-2 py-0.5 rounded-full bg-sky-100 border border-sky-200 text-sky-800">±5% TOL</span>
+</div>
+<!-- Main Value Prominence -->
+<div class="flex items-baseline justify-between gap-2 mt-1">
+<div class="flex items-baseline gap-1">
+<span class="font-['Space_Grotesk',sans-serif] text-4xl font-extrabold text-slate-900 tracking-tight" id="resistor-e24">220</span>
+<span class="font-['Space_Grotesk',sans-serif] text-2xl font-bold text-sky-600">Ω</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs text-slate-500 font-medium">R Exacta Calculada</span>
+<span class="font-['JetBrains_Mono',monospace] text-sm font-bold text-slate-800" id="resistor-exact">200.0 Ω</span>
+</div>
+</div>
+<!-- Resistor Graphical Visualizer -->
+<div class="flex flex-col bg-white rounded-xl p-3 gap-2 mt-1 border border-slate-200/80 shadow-xs">
+<div class="flex items-center justify-between text-xs text-slate-600">
+<span class="font-bold uppercase tracking-wide text-slate-500 text-[11px]">Código de Bandas:</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs font-bold text-slate-800" id="band-text">Rojo · Rojo · Marrón · Oro</span>
+</div>
+<!-- Ceramic Resistor Body Graphic -->
+<div class="relative w-full h-8 flex items-center justify-center">
+<!-- Lead Wires -->
+<div class="absolute w-full h-1 bg-slate-300 rounded-full"></div>
+<!-- Resistor Body Shell -->
+<div class="relative z-10 w-36 h-6 rounded-full bg-[#fde047]/30 border border-amber-200 flex items-center justify-evenly px-3 shadow-inner">
+<span class="w-2.5 h-full bg-[#ef4444] rounded-sm" id="band-1"></span>
+<span class="w-2.5 h-full bg-[#ef4444] rounded-sm" id="band-2"></span>
+<span class="w-2.5 h-full bg-[#854d0e] rounded-sm" id="band-3"></span>
+<span class="w-2 h-full bg-[#eab308] rounded-sm ml-2" id="band-4"></span>
+</div>
+</div>
+</div>
+<!-- Power & Thermal Diagnostic -->
+<div class="grid grid-cols-2 gap-2 mt-1 pt-1">
+<div class="flex flex-col p-2.5 rounded-xl bg-white border border-slate-200/70">
+<span class="text-[11px] text-slate-500 font-medium">Potencia Disipada</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs font-bold text-amber-700" id="power-display">~45.0 mW</span>
+</div>
+<div class="flex flex-col p-2.5 rounded-xl bg-white border border-slate-200/70">
+<span class="text-[11px] text-slate-500 font-medium">Factor Térmico</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs font-bold text-emerald-700">1/4W (250mW) OK</span>
+</div>
+</div>
+</div>
+<!-- Bench Quick Note Callout -->
+<div class="flex items-start gap-2.5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 text-slate-700 shadow-xs">
+<span class="material-symbols-outlined text-amber-600 text-[20px] shrink-0 mt-0.5">tips_and_updates</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-['Space_Grotesk',sans-serif] text-xs text-slate-900 font-bold">Consejo de Banco de Pruebas</span>
+<p class="text-xs text-slate-600 leading-relaxed">
+        Si alimentas un <strong class="text-sky-700 font-bold">LED azul con 3.3V</strong>, la resistencia requerida cae a solo <strong class="text-slate-900 font-bold">~20Ω a 33Ω</strong>. Un cálculo errado puede quemar el pin GPIO del microcontrolador.
+      </p>
+</div>
+</div>
+<!-- Collapsible / Quick Access Preview Cards for Alternate Calculations -->
+<div class="flex flex-col gap-2 mt-0.5">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500 px-1">Otras Herramientas Rápidas</span>
+<!-- Divisor de Tensión Summary Card -->
+<details class="group bg-white rounded-2xl overflow-hidden shadow-xs border border-slate-200 transition-all">
+<summary class="flex items-center justify-between p-3.5 cursor-pointer list-none select-none hover:bg-slate-50/70 transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">alt_route</span>
+</div>
+<div class="flex flex-col">
+<span class="font-['Space_Grotesk',sans-serif] text-sm font-bold text-slate-900">Divisor de Tensión</span>
+<span class="text-xs text-slate-500 font-medium">Vin: 12.0V → Vout: 5.0V</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-3.5 pb-3.5 pt-1 flex flex-col gap-2 bg-slate-50/50 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500 font-medium">R1 Superior:</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs font-bold text-slate-800">10.0 kΩ</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500 font-medium">R2 Inferior (Teórico):</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs font-bold text-slate-800">7.14 kΩ</span>
+</div>
+<div class="flex justify-between items-center text-xs bg-indigo-50 border border-indigo-100 p-2.5 rounded-xl">
+<span class="text-indigo-800 font-semibold">R2 Estándar E24:</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-indigo-900 font-bold">6.8 kΩ (Vout: 4.86V)</span>
+</div>
+<button class="w-full py-2 mt-1 rounded-xl bg-indigo-100/70 hover:bg-indigo-100 text-indigo-800 font-semibold text-xs text-center transition-colors" type="button">
+          Abrir en Calculadora Completa →
+        </button>
+</div>
+</details>
+<!-- Op-Amp Ganancia Summary Card -->
+<details class="group bg-white rounded-2xl overflow-hidden shadow-xs border border-slate-200 transition-all">
+<summary class="flex items-center justify-between p-3.5 cursor-pointer list-none select-none hover:bg-slate-50/70 transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">linear_scale</span>
+</div>
+<div class="flex flex-col">
+<span class="font-['Space_Grotesk',sans-serif] text-sm font-bold text-slate-900">Op-Amp No Inversor</span>
+<span class="text-xs text-slate-500 font-medium">Ganancia Av = 1 + (Rf / R1)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-3.5 pb-3.5 pt-1 flex flex-col gap-2 bg-slate-50/50 border-t border-slate-100">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500 font-medium">Feedback Rf:</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs font-bold text-slate-800">100.0 kΩ</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500 font-medium">Entrada R1:</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs font-bold text-slate-800">10.0 kΩ</span>
+</div>
+<div class="flex justify-between items-center text-xs bg-amber-50 border border-amber-200/80 p-2.5 rounded-xl">
+<span class="text-amber-800 font-semibold">Ganancia Total:</span>
+<span class="font-['JetBrains_Mono',monospace] text-xs text-amber-900 font-bold">11.0× (+20.8 dB)</span>
+</div>
+<button class="w-full py-2 mt-1 rounded-xl bg-amber-100/70 hover:bg-amber-100 text-amber-900 font-semibold text-xs text-center transition-colors" type="button">
+          Abrir en Calculadora Completa →
+        </button>
+</div>
+</details>
+</div>
+</div>
+<script>
+  let currentVs = 5.0;
+  let currentVf = 2.0;
+  let currentI = 0.015; // 15mA
+
+  // E24 Series Multipliers
+  const e24Base = [10, 11, 12, 13, 15, 16, 18, 20, 22, 24, 27, 30, 33, 36, 39, 43, 47, 51, 56, 62, 68, 75, 82, 91];
+
+  function getE24(val) {
+    if (val <= 0) return 0;
+    const exponent = Math.floor(Math.log10(val));
+    const factor = Math.pow(10, exponent);
+    const normalized = val / factor;
+
+    let closest = e24Base[0];
+    let minDiff = Math.abs(normalized - closest);
+    for (let i = 1; i < e24Base.length; i++) {
+      let diff = Math.abs(normalized - e24Base[i]);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = e24Base[i];
+      }
+    }
+    return Math.round(closest * factor * 10) / 10;
+  }
+
+  const colorMap = {
+    0: { name: 'Negro', bg: '#0f172a' },
+    1: { name: 'Marrón', bg: '#854d0e' },
+    2: { name: 'Rojo', bg: '#ef4444' },
+    3: { name: 'Naranja', bg: '#f97316' },
+    4: { name: 'Amarillo', bg: '#eab308' },
+    5: { name: 'Verde', bg: '#22c55e' },
+    6: { name: 'Azul', bg: '#3b82f6' },
+    7: { name: 'Violeta', bg: '#a855f7' },
+    8: { name: 'Gris', bg: '#64748b' },
+    9: { name: 'Blanco', bg: '#f8fafc' }
+  };
+
+  function updateColorBands(val) {
+    const b1El = document.getElementById('band-1');
+    const b2El = document.getElementById('band-2');
+    const b3El = document.getElementById('band-3');
+    const bandTextEl = document.getElementById('band-text');
+
+    if (val < 10) {
+      b1El.style.backgroundColor = '#ef4444';
+      b2El.style.backgroundColor = '#ef4444';
+      b3El.style.backgroundColor = '#854d0e';
+      bandTextEl.textContent = 'Rojo · Rojo · Oro (Bajo Valor)';
+      return;
+    }
+
+    const str = Math.round(val).toString();
+    const d1 = parseInt(str[0], 10);
+    const d2 = parseInt(str[1], 10);
+    const mult = str.length - 2;
+
+    const c1 = colorMap[d1] || colorMap[1];
+    const c2 = colorMap[d2] || colorMap[0];
+    const c3 = colorMap[mult] || colorMap[0];
+
+    b1El.style.backgroundColor = c1.bg;
+    b2El.style.backgroundColor = c2.bg;
+    b3El.style.backgroundColor = c3.bg;
+
+    bandTextEl.textContent = `${c1.name} · ${c2.name} · ${c3.name} · Oro`;
+  }
+
+  function calculate() {
+    const vDrop = Math.max(0, currentVs - currentVf);
+    const exactR = vDrop / currentI;
+    const e24 = getE24(exactR);
+    const powerMw = (vDrop * currentI) * 1000;
+
+    document.getElementById('resistor-exact').textContent = exactR.toFixed(1) + ' Ω';
+    document.getElementById('resistor-e24').textContent = e24.toFixed(0);
+    document.getElementById('power-display').textContent = '~' + powerMw.toFixed(1) + ' mW';
+
+    updateColorBands(e24);
+  }
+
+  function setVs(val, btn) {
+    currentVs = parseFloat(val);
+    document.getElementById('vs-display').textContent = currentVs.toFixed(1) + ' V';
+    document.getElementById('vs-slider').value = currentVs;
+
+    document.querySelectorAll('.preset-vs').forEach(b => {
+      b.className = 'preset-vs py-2 rounded-xl bg-slate-50 text-slate-700 border border-slate-200/80 hover:bg-slate-100 font-[\'JetBrains_Mono\',monospace] text-xs font-medium transition-all';
+    });
+    if (btn) {
+      btn.className = 'preset-vs py-2 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-900 font-[\'JetBrains_Mono\',monospace] text-xs shadow-xs transition-all font-bold';
+    }
+    calculate();
+  }
+
+  function onVsSlider(val) {
+    currentVs = parseFloat(val);
+    document.getElementById('vs-display').textContent = currentVs.toFixed(1) + ' V';
+    document.querySelectorAll('.preset-vs').forEach(b => {
+      b.className = 'preset-vs py-2 rounded-xl bg-slate-50 text-slate-700 border border-slate-200/80 hover:bg-slate-100 font-[\'JetBrains_Mono\',monospace] text-xs font-medium transition-all';
+    });
+    calculate();
+  }
+
+  function setLed(vf, label, colorHex, btn) {
+    currentVf = parseFloat(vf);
+    document.getElementById('vf-display').textContent = currentVf.toFixed(1) + ' V';
+
+    document.querySelectorAll('.led-card').forEach(b => {
+      b.className = 'led-card flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 transition-all';
+      const indicator = b.querySelector('span:first-child');
+      if (indicator) indicator.classList.remove('ring-2', 'ring-rose-200', 'ring-emerald-200', 'ring-sky-200', 'ring-amber-200');
+    });
+    btn.className = 'led-card flex items-center justify-between p-2.5 rounded-xl bg-rose-50/70 border border-rose-200 text-slate-800 transition-all font-medium';
+    calculate();
+  }
+
+  function setCurrent(mA, btn) {
+    currentI = mA / 1000;
+    document.getElementById('current-display').textContent = mA + ' mA';
+
+    document.querySelectorAll('.preset-cur').forEach(b => {
+      b.className = 'preset-cur py-2 px-1 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 text-center transition-all';
+    });
+    btn.className = 'preset-cur py-2 px-1 rounded-xl bg-indigo-100 border border-indigo-300 text-indigo-900 text-center transition-all font-bold shadow-xs';
+    calculate();
+  }
+
+  // Initialize
+  calculate();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-white/90 backdrop-blur-xl border-t border-slate-200/80 shadow-lg"><div class="flex justify-around items-center h-16 px-1"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[44px] px-2 py-1 text-slate-400 hover:text-slate-700 transition-colors" data-path="pinouts" href="#"><span class="material-symbols-outlined text-[22px]">memory</span><span class="text-[10px] font-bold uppercase tracking-wider">Pinouts</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[44px] px-2 py-1 text-slate-400 hover:text-slate-700 transition-colors" data-path="circuitos" href="#"><span class="material-symbols-outlined text-[22px]">schema</span><span class="text-[10px] font-bold uppercase tracking-wider">Circuitos</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[44px] px-3 py-1 text-emerald-800 font-bold bg-emerald-100/70 rounded-2xl border border-emerald-200/80 transition-colors" data-path="calculadora" href="#"><span class="material-symbols-outlined text-[22px] text-emerald-700">calculate</span><span class="text-[10px] font-bold uppercase tracking-wider text-emerald-900">Cálculos</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[44px] px-2 py-1 text-slate-400 hover:text-slate-700 transition-colors" data-path="seguridad" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="text-[10px] font-bold uppercase tracking-wider">Seguridad</span></a></div></nav></body></html>
